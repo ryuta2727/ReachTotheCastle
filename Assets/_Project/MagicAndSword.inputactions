@@ -30,7 +30,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "RightClick",
+                    "name": "Fire2",
                     "type": "Button",
                     "id": "9e9e8c2d-cfcb-4c5a-920b-17361902733f",
                     "expectedControlType": "Button",
@@ -38,9 +38,17 @@
                     "interactions": ""
                 },
                 {
-                    "name": "RightClickRelease",
+                    "name": "Guard",
                     "type": "Button",
-                    "id": "7d099284-d5a7-4b63-bb92-ad61dfdfe5db",
+                    "id": "9549b903-d8d5-469c-99d9-d851694b165a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Magic",
+                    "type": "Button",
+                    "id": "04443a8b-2cbf-41bb-a298-ef88dee96c19",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -227,7 +235,7 @@
                     "name": "",
                     "id": "05f6913d-c316-48b2-a6bb-e225f14c7960",
                     "path": "<Mouse>/leftButton",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Fire",
@@ -271,21 +279,32 @@
                     "name": "",
                     "id": "d9cad4a5-516b-41db-9775-eabdbaa6bcb0",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "RightClick",
+                    "action": "Fire2",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "b933265d-ff81-4f66-8434-a93380c6243e",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "Press(behavior=1)",
+                    "id": "418f44bb-ae30-4398-9e92-1ed1b91b49f7",
+                    "path": "<Keyboard>/ctrl",
+                    "interactions": "Press",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
-                    "action": "RightClickRelease",
+                    "action": "Guard",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a1e2d5f4-49bd-4d2c-993f-963a24967790",
+                    "path": "<Keyboard>/v",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Magic",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

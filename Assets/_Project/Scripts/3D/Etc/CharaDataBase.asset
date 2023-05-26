@@ -16,11 +16,11 @@ MonoBehaviour:
   - chara: {fileID: 0}
     explainText: "\u30D7\u30EC\u30A4\u30E4\u30FC"
     Hp: 10
-    Atk: 1
+    Atk: 5
     Int: 1
     def: 1
-    Lev: 17
-    Exp: 0
+    Lev: 1
+    Exp: 5
     MoveRange: 0
   - chara: {fileID: 0}
     explainText: "\u30B4\u30FC\u30EC\u30E0"
@@ -29,5 +29,14 @@ MonoBehaviour:
     Int: 0
     def: 0
     Lev: 1
-    Exp: 0
+    Exp: 5
     MoveRange: 5
+  - chara: {fileID: 0}
+    explainText: "\u30AA\u30FC\u30AF"
+    Hp: 30
+    Atk: 3
+    Int: 0
+    def: 0
+    Lev: 1
+    Exp: 0
+    MoveRange: 7

@@ -7,7 +7,7 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
     //プレイヤーが索敵範囲に入った時
     public void InSearchRocation()
     {
-        transform.parent.gameObject.GetComponent<EnemyMove>().ChasePlayer();
+        
     }
     //プレイヤーが索敵範囲から出た時
     public void OutSearchRocation()
@@ -15,16 +15,16 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
 
     }
     //被ダメ処理
-    public int EnmyDamaged(int atk,int nowHp)
+    public int EnemyDamaged(int atk,int nowHp)
     {
         Debug.Log("aaa");
         var resultHp = nowHp - atk;
         return resultHp;
     }
     //死亡時処理
-    public void EnemyDeath()
+    public void EnemyDeath(int enemyNum)
     {
-        //死亡時の処理を書く
+        GameManager.Instance.PlayerGetExp(enemyNum);
         Debug.Log("死亡");
     }
     //(引数)番のキャラクターの最大Hpの取得
@@ -36,5 +36,10 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
     public int EnemyMoveRange(int charanum)
     {
         return GameManager.Instance.status.charaList[charanum].MoveRange;
+    }
+    //(引数)番のキャラクターのhpの取得
+    public int EnemyAtk(int charanum)
+    {
+        return GameManager.Instance.status.charaList[charanum].Hp;
     }
 }

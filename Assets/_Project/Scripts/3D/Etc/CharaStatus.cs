@@ -6,7 +6,6 @@ using UnityEngine;
 [Serializable]
 public class CharaStatus
 {
-    public GameObject chara;    //3Dオブジェクト
     public string explainText;  //説明
     public int Hp;              //体力
     public int Atk;             //攻撃力
