@@ -8,7 +8,7 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
 
     void Start()
     {
-        //Cursor.visible = false;
+        Cursor.visible = false;
         Reset();
     }
 

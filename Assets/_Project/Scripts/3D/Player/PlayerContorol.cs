@@ -58,11 +58,6 @@ public class PlayerContorol : MonoBehaviour
             targetRotation = Quaternion.LookRotation(rbody.velocity, Vector3.up);
         }
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed);
-
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            
-        }
     }
     public void OnMove(InputAction.CallbackContext context)
     {
@@ -124,6 +119,7 @@ public class PlayerContorol : MonoBehaviour
     }
     public void PlayerDeath()
     {
+        playerCanMove = false;
         anim.SetTrigger("Death");
     }
     IEnumerator DamagedCoolTime()

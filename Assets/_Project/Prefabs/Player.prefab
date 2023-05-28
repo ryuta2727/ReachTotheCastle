@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 1380584235825062821}
   - component: {fileID: 1405045934927049344}
   m_Layer: 0
-  m_Name: MoonSword 3
+  m_Name: MoonSword
   m_TagString: Sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4012,6 +4012,7 @@ MonoBehaviour:
   playerSpeed: 3
   anim: {fileID: 3267909630852417117}
   playerStatus: {fileID: 11400000, guid: d3f1ce6b2a32d744b8a9433ccf2b5803, type: 2}
+  sword: {fileID: 1405045934927049345}
 --- !u!114 &8949611058408403419
 MonoBehaviour:
   m_ObjectHideFlags: 0

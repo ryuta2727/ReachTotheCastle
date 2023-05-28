@@ -7,44 +7,37 @@ using UnityEngine.InputSystem;
 public class CameraContorol : MonoBehaviour
 {
     [SerializeField]
-    [Tooltip("肩越しのカメラ")]
+    [Tooltip("タイトルカメラ")]
     private CinemachineVirtualCamera vCamera2;
-    //切り替え時に元のプライオリティを保持
-    private int defaultPriorityVC2;
+    [SerializeField]
+    PlayerInput playerInput;
+    [SerializeField]
+    GameObject titleCanvas;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        defaultPriorityVC2 = vCamera2.Priority;
-    }
+    private bool onceTime = true;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
     }
-    //肩越しカメラに変更
-    public void ToShoulderCameraChange()
-    {
-        vCamera2.Priority = 20;
-    }
-    //メインカメラに変更 *増えたら記述必須
+    //メインのカメラに変更
     public void ToMainCameraChange()
     {
-        vCamera2.Priority = defaultPriorityVC2;
+
+        vCamera2.Priority = -10;
     }
     public void OnRight(InputAction.CallbackContext context)
     {
-        if(context.performed)
+        if(onceTime&& context.performed)
         {
-            ToShoulderCameraChange();
+            titleCanvas.SetActive(false);
+            onceTime = false;
+            ToMainCameraChange();
+            StartCoroutine(CameraChangeTime());
         }
     }
-    public void OnRightLelease(InputAction.CallbackContext context)
+    IEnumerator CameraChangeTime()
     {
-        if(context.performed)
-        {
-            ToMainCameraChange();
-        }
+        yield return new WaitForSeconds(2.2f);
+        playerInput.currentActionMap = playerInput.actions.actionMaps[0];
     }
 }

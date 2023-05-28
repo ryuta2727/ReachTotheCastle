@@ -13,17 +13,15 @@ MonoBehaviour:
   m_Name: CharaDataBase
   m_EditorClassIdentifier: 
   charaList:
-  - chara: {fileID: 0}
-    explainText: "\u30D7\u30EC\u30A4\u30E4\u30FC"
+  - explainText: "\u30D7\u30EC\u30A4\u30E4\u30FC"
     Hp: 10
-    Atk: 5
+    Atk: 4
     Int: 1
     def: 1
     Lev: 1
     Exp: 5
     MoveRange: 0
-  - chara: {fileID: 0}
-    explainText: "\u30B4\u30FC\u30EC\u30E0"
+  - explainText: "\u30B4\u30FC\u30EC\u30E0"
     Hp: 10
     Atk: 2
     Int: 0
@@ -31,8 +29,7 @@ MonoBehaviour:
     Lev: 1
     Exp: 5
     MoveRange: 5
-  - chara: {fileID: 0}
-    explainText: "\u30AA\u30FC\u30AF"
+  - explainText: "\u30AA\u30FC\u30AF"
     Hp: 30
     Atk: 3
     Int: 0

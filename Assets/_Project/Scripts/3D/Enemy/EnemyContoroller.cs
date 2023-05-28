@@ -229,13 +229,13 @@ public class EnemyContoroller : MonoBehaviour
                 atackcollider[0].tag = "EnemyAttack";
                 atackcollider[1].tag = "EnemyAttack";
                 anim.SetTrigger("Atack1");  //60
-                StartCoroutine(AtkTagSet(1.5f));
+                StartCoroutine(AtkTagSet(1f));
             }
             else if(rnd == 1)
             {
                 atackcollider[0].tag = "EnemyAttack";
                 anim.SetTrigger("Atack2");  //40
-                StartCoroutine(AtkTagSet(1.5f));
+                StartCoroutine(AtkTagSet(1f));
             }
         }
     }
