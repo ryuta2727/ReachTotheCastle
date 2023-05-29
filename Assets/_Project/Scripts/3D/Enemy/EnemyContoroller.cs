@@ -227,13 +227,12 @@ public class EnemyContoroller : MonoBehaviour
             if (rnd == 0)
             {
                 atackcollider[0].tag = "EnemyAttack";
-                atackcollider[1].tag = "EnemyAttack";
                 anim.SetTrigger("Atack1");  //60
                 StartCoroutine(AtkTagSet(1f));
             }
             else if(rnd == 1)
             {
-                atackcollider[0].tag = "EnemyAttack";
+                atackcollider[1].tag = "EnemyAttack";
                 anim.SetTrigger("Atack2");  //40
                 StartCoroutine(AtkTagSet(1f));
             }
@@ -288,7 +287,15 @@ public class EnemyContoroller : MonoBehaviour
         yield return new WaitForSeconds(num);
         atackcollider[0].tag = "Untagged";
         atackcollider[1].tag = "Untagged";
+        yield return new WaitForSeconds(3f);
         enemyCanAttack = true;
+    }
+    IEnumerator SceneReset()
+    {
+        GameManager.Instance.GameClear();
+        yield return new WaitForSeconds(6f);
+        GameManager.Instance.ResetStatus();
+        GameManager.Instance.SceneReset();
     }
     private void OnTriggerEnter(Collider collision)
     {

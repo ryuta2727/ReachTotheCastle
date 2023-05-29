@@ -16,9 +16,6 @@ public class CameraContorol : MonoBehaviour
 
     private bool onceTime = true;
 
-    private void Awake()
-    {
-    }
     //ƒƒCƒ“‚ÌƒJƒƒ‰‚É•ÏX
     public void ToMainCameraChange()
     {

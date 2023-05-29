@@ -21,6 +21,7 @@ public class PlayerContorol : MonoBehaviour
 
     //private float speed = 0;
     private bool playerCanMove = true;
+    private bool isPlayerGeard = false;
     private bool playerDodge = false;
 
     private Vector2 playerMove = Vector2.zero;
@@ -78,6 +79,7 @@ public class PlayerContorol : MonoBehaviour
         if (context.performed)
         {
             playerCanMove = false;
+            sword.tag = "Sword";
             anim.SetTrigger("Atack2");
         }
     }
@@ -93,11 +95,13 @@ public class PlayerContorol : MonoBehaviour
     {
         if (context.performed)
         {
+            isPlayerGeard = true;
             playerCanMove = false;
             anim.SetBool("Guard",true);
         }
         if(context.canceled)
         {
+            isPlayerGeard = false;
             anim.SetBool("Guard", false);
         }
     }
@@ -121,15 +125,23 @@ public class PlayerContorol : MonoBehaviour
     {
         playerCanMove = false;
         anim.SetTrigger("Death");
+        StartCoroutine(SceneReset());
     }
     IEnumerator DamagedCoolTime()
     {
         yield return new WaitForSeconds(2f);
         playerDodge = false;
     }
+    IEnumerator SceneReset()
+    {
+        GameManager.Instance.PlayerDie();
+        yield return new WaitForSeconds(5f);
+        GameManager.Instance.ResetStatus();
+        GameManager.Instance.SceneReset();
+    }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("EnemyAttack") && !playerDodge)
+        if (collision.CompareTag("EnemyAttack") && !playerDodge && !isPlayerGeard)
         {
             playerDodge = true;
             anim.SetTrigger("Damaged");

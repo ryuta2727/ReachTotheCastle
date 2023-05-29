@@ -19,19 +19,19 @@ MonoBehaviour:
     Int: 1
     def: 1
     Lev: 1
-    Exp: 5
+    Exp: 0
     MoveRange: 0
   - explainText: "\u30B4\u30FC\u30EC\u30E0"
     Hp: 10
-    Atk: 2
+    Atk: 1
     Int: 0
     def: 0
     Lev: 1
     Exp: 5
     MoveRange: 5
   - explainText: "\u30AA\u30FC\u30AF"
-    Hp: 30
-    Atk: 3
+    Hp: 25
+    Atk: 2
     Int: 0
     def: 0
     Lev: 1

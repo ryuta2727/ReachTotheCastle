@@ -25,7 +25,10 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
     public void EnemyDeath(int enemyNum)
     {
         GameManager.Instance.PlayerGetExp(enemyNum);
-        Debug.Log("死亡");
+        if(enemyNum == 2)
+        {
+            StartCoroutine(SceneReset());
+        }
     }
     //(引数)番のキャラクターの最大Hpの取得
     public int EnemyMAxHp(int charaNum)
@@ -41,5 +44,12 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
     public int EnemyAtk(int charanum)
     {
         return GameManager.Instance.status.charaList[charanum].Hp;
+    }
+    IEnumerator SceneReset()
+    {
+        GameManager.Instance.GameClear();
+        yield return new WaitForSeconds(8f);
+        GameManager.Instance.ResetStatus();
+        GameManager.Instance.SceneReset();
     }
 }

@@ -689,7 +689,7 @@ GameObject:
   - component: {fileID: 1405045934927049344}
   m_Layer: 0
   m_Name: MoonSword
-  m_TagString: Sword
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4168,7 +4168,7 @@ MonoBehaviour:
     m_ActionName: Player/Magic[/Keyboard/v]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: Display
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!54 &8949611058408403421
