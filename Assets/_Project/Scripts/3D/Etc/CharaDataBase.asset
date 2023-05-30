@@ -28,7 +28,7 @@ MonoBehaviour:
     def: 0
     Lev: 1
     Exp: 5
-    MoveRange: 5
+    MoveRange: 7
   - explainText: "\u30AA\u30FC\u30AF"
     Hp: 25
     Atk: 2

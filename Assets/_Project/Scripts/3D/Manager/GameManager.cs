@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
@@ -53,5 +54,9 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     public void GameClear()
     {
         clear.SetActive(true);
+    }
+    public void OnEscKey(InputAction.CallbackContext context)
+    {
+        Application.Quit();
     }
 }

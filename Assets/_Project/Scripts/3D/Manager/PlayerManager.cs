@@ -14,25 +14,14 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager>
         playerNowHp = playerMaxHp;
         playerAtk = GameManager.Instance.status.charaList[0].Atk;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public int PlayerDamaged(int atk)
     {
-        Debug.Log(playerNowHp);
         playerNowHp = playerNowHp - atk;
         if(playerNowHp < 5)
         {
             PostCameraManager.Instance.LowHp();
         }
         return playerNowHp;
-    }
-    public void PlayerDeath()
-    {
-
     }
     public int PlayerAtk()
     {

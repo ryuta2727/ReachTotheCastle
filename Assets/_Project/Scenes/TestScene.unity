@@ -2188,6 +2188,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Golem
       objectReference: {fileID: 0}
+    - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -2310,6 +2314,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ork berserk prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 3325507175744635529, guid: 584921d87ee25a7439abf5ec7c300d30, type: 3}
+      propertyPath: m_StoppingDistance
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3330379820844062991, guid: 584921d87ee25a7439abf5ec7c300d30, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2370,6 +2378,10 @@ PrefabInstance:
     - target: {fileID: 1405045934927049345, guid: 7b1ae48af4ed5884ca74fce8501329bd, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949611058408403419, guid: 7b1ae48af4ed5884ca74fce8501329bd, type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 546717c4-c173-4ca0-af72-290f39aa0446
       objectReference: {fileID: 0}
     - target: {fileID: 8949611058408403420, guid: 7b1ae48af4ed5884ca74fce8501329bd, type: 3}
       propertyPath: sword
