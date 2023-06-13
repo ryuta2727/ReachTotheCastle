@@ -876,7 +876,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -1007,7 +1007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -1199,7 +1199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3325507175744635529, guid: 584921d87ee25a7439abf5ec7c300d30, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3330379820844062991, guid: 584921d87ee25a7439abf5ec7c300d30, type: 3}
       propertyPath: m_RootOrder
@@ -2218,7 +2218,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -2422,7 +2422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -2714,7 +2714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -8839,7 +8839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -9016,7 +9016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -9081,7 +9081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -9948,7 +9948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -10147,7 +10147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -10202,6 +10202,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8949611058408403418, guid: 7b1ae48af4ed5884ca74fce8501329bd, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8949611058408403419, guid: 7b1ae48af4ed5884ca74fce8501329bd, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 19
@@ -10249,6 +10253,10 @@ PrefabInstance:
     - target: {fileID: 8949611058408403419, guid: 7b1ae48af4ed5884ca74fce8501329bd, type: 3}
       propertyPath: m_ActionEvents.Array.data[17].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8949611058408403421, guid: 7b1ae48af4ed5884ca74fce8501329bd, type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8949611058408403422, guid: 7b1ae48af4ed5884ca74fce8501329bd, type: 3}
       propertyPath: m_RootOrder
@@ -10471,7 +10479,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder
@@ -11136,7 +11144,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488565530, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_StoppingDistance
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7217071053488992633, guid: 0c454701f6ed42b429d42717a83c9504, type: 3}
       propertyPath: m_RootOrder

@@ -93,12 +93,21 @@ public class EnemyContoroller : MonoBehaviour
     public void ChasePlayer()
     {
         isPlayerChase = true;
+        if (enemyNumber == 1)
+        {
+            navMeshAgent.stoppingDistance = 3.2f;
+        }
+        else if(enemyNumber == 2)
+        {
+            navMeshAgent.stoppingDistance = 1.5f;
+        }
         //TargetSetPlayer();
     }
     //ÉvÉåÉCÉÑÅ[ÇÃí«è]âèú
     public void StopChasePlayer()
     {
         isPlayerChase = false;
+        navMeshAgent.stoppingDistance = 0;
         //TargetSetRndRocation();
     }
     //ìGAIÇÃçsìÆèàóù
@@ -174,13 +183,9 @@ public class EnemyContoroller : MonoBehaviour
                 nextState = EnemyAiState.ATTACK;
             }
             //í«ê’à⁄ìÆ
-            else if(navMeshAgent.remainingDistance > navMeshAgent.stoppingDistance)
-            {
-                nextState = EnemyAiState.CHASE;
-            }
             else
             {
-                nextState = EnemyAiState.IDLE;
+                nextState = EnemyAiState.CHASE;
             }
             
         }
@@ -216,6 +221,7 @@ public class EnemyContoroller : MonoBehaviour
     }
     private void Chase()
     {
+        Debug.Log("í«ê’");
         TargetSetPlayer();
     }
     private void Attack()
