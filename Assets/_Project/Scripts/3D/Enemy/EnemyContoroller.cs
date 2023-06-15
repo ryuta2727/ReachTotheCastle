@@ -69,7 +69,7 @@ public class EnemyContoroller : MonoBehaviour
     {
         navMeshAgent.SetDestination(player.position);
     }
-    //徘徊時の次の目的地を設定
+    //徘徊時の次の目的地を設定(ランダム)
     private void TargetSetRndRocation()
     {
         var safe = 0;
@@ -81,6 +81,7 @@ public class EnemyContoroller : MonoBehaviour
             if(safe > 100)
             {
                 enemyWait = true;
+                break;
             }
             #endregion
             nextTarget = new Vector3(Random.Range(-EnemyManager.Instance.EnemyMoveRange(enemyNumber), EnemyManager.Instance.EnemyMoveRange(enemyNumber)), 0,
@@ -130,12 +131,6 @@ public class EnemyContoroller : MonoBehaviour
             case EnemyAiState.ATTACK:
                 Attack();
                 break;
-            case EnemyAiState.IDLE:
-                Idle();
-                break;
-            case EnemyAiState.AVOID:
-                Avoid();
-                break;
             case EnemyAiState.Die:
                 Die();
                 break;
@@ -149,18 +144,11 @@ public class EnemyContoroller : MonoBehaviour
         {
             return;
         }
-
-        InitAi();
         AiMainRoutine();
 
         aiState = nextState;
 
         StartCoroutine(AiTimer());
-    }
-    //初期化
-    private void InitAi()
-    {
-        //初期化
     }
     #region メインのルーチン(ステートのセット)
     private void AiMainRoutine()
@@ -194,23 +182,22 @@ public class EnemyContoroller : MonoBehaviour
         {
             nextState = EnemyAiState.MOVE;
         }
+
         //死亡時
-        else if(isEnemyDie)
+        if(isEnemyDie)
         {
             nextState = EnemyAiState.Die;
-        }
-        //
-        else
-        {
-            nextState = EnemyAiState.IDLE;
         }
     }
     #endregion
     #region 各ステートの処理
+    //Idle(基本使わない)
     private void Wait()
     {
-
+        anim.SetBool("Walk", false);
+        anim.SetBool("Idle", true);
     }
+    //自由移動
     private void Move()
     {
         if (!isPlayerChase && !navMeshAgent.pathPending && navMeshAgent.remainingDistance < 0.5f)
@@ -219,40 +206,34 @@ public class EnemyContoroller : MonoBehaviour
             TargetSetRndRocation();
         }
     }
+    //プレイヤーを追跡
     private void Chase()
     {
-        Debug.Log("追跡");
         TargetSetPlayer();
     }
+    //攻撃
     private void Attack()
     {
         if (enemyCanAttack)
         {
             enemyCanAttack = false;
+            //二種の攻撃からランダム
             var rnd = Random.Range(0, 2);
             if (rnd == 0)
             {
                 atackcollider[0].tag = "EnemyAttack";
-                anim.SetTrigger("Atack1");  //60
-                StartCoroutine(AtkTagSet(1f));
+                anim.SetTrigger("Atack1");
+                StartCoroutine(AtkTagSet(1f));  //引数は攻撃判定が残る時間
             }
             else if(rnd == 1)
             {
                 atackcollider[1].tag = "EnemyAttack";
-                anim.SetTrigger("Atack2");  //40
-                StartCoroutine(AtkTagSet(1f));
+                anim.SetTrigger("Atack2");
+                StartCoroutine(AtkTagSet(1f));  //引数は攻撃判定が残る時間
             }
         }
     }
-    
-    private void Idle()
-    {
-
-    }
-    private void Avoid()
-    {
-
-    }
+    //死亡
     private void Die()
     {
         if (isExp)
@@ -263,14 +244,11 @@ public class EnemyContoroller : MonoBehaviour
         }
     }
     #endregion
-    public int EnemyAtk()
-    {
-        return enemyAtk;
-    }
+    //フラグのリセット
     private void FlagReset()
     {
         isStateRunning = false;
-        enemyWait = false;
+
         enemyCanAttack = false;
         isEnemyMove = false;
         isPlayerChase = false;
@@ -283,26 +261,22 @@ public class EnemyContoroller : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         isStateRunning = false;
     }
+    //被ダメのクールタイム
     IEnumerator DamagedCoolTime()
     {
         yield return new WaitForSeconds(2f);
         enemyDodge = false;
     }
+    //攻撃判定の発生とクールタイム
     IEnumerator AtkTagSet(float num)
     {
-        yield return new WaitForSeconds(num);
+        yield return new WaitForSeconds(num);  //攻撃判定が残る時間
         atackcollider[0].tag = "Untagged";
         atackcollider[1].tag = "Untagged";
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3f);  //次に攻撃ができるようになるクールタイム
         enemyCanAttack = true;
     }
-    IEnumerator SceneReset()
-    {
-        GameManager.Instance.GameClear();
-        yield return new WaitForSeconds(6f);
-        GameManager.Instance.ResetStatus();
-        GameManager.Instance.SceneReset();
-    }
+    //エネミーの被ダメ
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Sword") && !enemyDodge)
@@ -310,14 +284,17 @@ public class EnemyContoroller : MonoBehaviour
             enemyDodge = true;
             StartCoroutine(DamagedCoolTime());
             anim.SetTrigger("Damaged");
+            //被ダメ結果後のHp
             enemyHp = EnemyManager.Instance.EnemyDamaged(collision.transform.root.gameObject.GetComponent<PlayerContorol>().PlayerAtk(), enemyHp);
-            if(enemyHp < 0)
+            if(enemyHp <= 0)
             {
+                //--フラグを初期化して死亡フラグを発生--
                 FlagReset();
                 isEnemyDie = true;
             }
         }
     }
+    //自身のエネミー番号(種類)を返す
     public int EnemyNumber()
     {
         return enemyNumber;

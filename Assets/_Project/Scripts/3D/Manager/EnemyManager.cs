@@ -14,7 +14,7 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
     {
 
     }
-    //被ダメ処理
+    //被ダメ後のエネミーのHPを返す
     public int EnemyDamaged(int atk,int nowHp)
     {
         Debug.Log("aaa");
