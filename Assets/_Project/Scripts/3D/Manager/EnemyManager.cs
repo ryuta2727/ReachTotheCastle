@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
 {
-    //プレイヤーが索敵範囲に入った時
-    public void InSearchRocation()
-    {
-        
-    }
-    //プレイヤーが索敵範囲から出た時
-    public void OutSearchRocation()
-    {
-
-    }
     //被ダメ後のエネミーのHPを返す
     public int EnemyDamaged(int atk,int nowHp)
     {
@@ -27,7 +17,7 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
         GameManager.Instance.PlayerGetExp(enemyNum);
         if(enemyNum == 2)
         {
-            StartCoroutine(SceneReset());
+            GameManager.Instance.SceneResetGameClear();
         }
     }
     //(引数)番のキャラクターの最大Hpの取得
@@ -44,12 +34,5 @@ public class EnemyManager : SingletonMonoBehaviour<EnemyManager>
     public int EnemyAtk(int charanum)
     {
         return GameManager.Instance.status.charaList[charanum].Hp;
-    }
-    IEnumerator SceneReset()
-    {
-        GameManager.Instance.GameClear();
-        yield return new WaitForSeconds(8f);
-        GameManager.Instance.ResetStatus();
-        GameManager.Instance.SceneReset();
     }
 }
