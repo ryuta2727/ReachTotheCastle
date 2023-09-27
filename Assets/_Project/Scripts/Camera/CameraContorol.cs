@@ -13,6 +13,8 @@ public class CameraContorol : MonoBehaviour
     PlayerInput playerInput;
     [SerializeField]
     GameObject titleCanvas;
+    [SerializeField]
+    GameObject expainText;
 
     private bool onceTime = true;
 
@@ -42,5 +44,7 @@ public class CameraContorol : MonoBehaviour
         yield return new WaitForSeconds(2.2f);
         //InputSystemMap‚ğƒvƒŒƒCƒ„[‚Ì‚à‚Ì‚Ö
         playerInput.currentActionMap = playerInput.actions.actionMaps[0];
+        //
+        expainText.SetActive(true);
     }
 }

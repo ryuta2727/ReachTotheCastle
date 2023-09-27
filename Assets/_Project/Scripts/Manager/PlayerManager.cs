@@ -19,8 +19,8 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager>
     public int PlayerDamaged(int atk)
     {
         playerNowHp = playerNowHp - atk;
-        //プレイヤーのHPが5より低くなったら彩度を下げる演出
-        if(playerNowHp < 5)
+        //プレイヤーのHPが3より低くなったら彩度を下げる演出
+        if(playerNowHp < 3)
         {
             PostCameraManager.Instance.LowHp();
         }
@@ -47,7 +47,7 @@ public class PlayerManager : SingletonMonoBehaviour<PlayerManager>
     //Hpの初期化
     public void HpReset()
     {
-        playerMaxHp = 10;
-        playerNowHp = 10;
+        playerMaxHp = 5;
+        playerNowHp = 5;
     }
 }

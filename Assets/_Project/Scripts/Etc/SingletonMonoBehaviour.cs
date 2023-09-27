@@ -33,19 +33,19 @@ public abstract class SingletonMonoBehaviour<T> : MonoBehaviour where T : MonoBe
         CheckInstance();
     }
 
-    protected bool CheckInstance()
+    protected void CheckInstance()
     {
+        Debug.Log("チェック");
         if (instance == null)
         {
+            Debug.Log("大丈夫");
             instance = this as T;
-            DontDestroyOnLoad(gameObject);
-            return true;
+            //DontDestroyOnLoad(gameObject);
         }
-        else if (Instance == this)
+        else
         {
-            return true;
+            Debug.Log("重複");
+            Destroy(this);
         }
-        Destroy(this);
-        return false;
     }
 }

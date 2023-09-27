@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class GameManager : SingletonMonoBehaviour<GameManager>
 {
@@ -13,6 +14,8 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     GameObject die;
     [SerializeField]
     GameObject clear;
+    [SerializeField]
+    GameObject exitGame;
     void Start()
     {
         //カーソル非表示
@@ -74,12 +77,17 @@ public class GameManager : SingletonMonoBehaviour<GameManager>
     //Escキーでアプリケーション終わらす
     public void OnEscKey(InputAction.CallbackContext context)
     {
-        Application.Quit();
+        exitGame.SetActive(true);
     }
     //シーンリセットまでの時間
     IEnumerator WaitSceneReset()
     {
         yield return new WaitForSeconds(8f);
+        ResetStatus();
+        SceneReset();
+    }
+    public void NoWaitReset()
+    {
         ResetStatus();
         SceneReset();
     }

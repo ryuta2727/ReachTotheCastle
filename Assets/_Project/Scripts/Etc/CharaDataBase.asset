@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charaList:
   - explainText: "\u30D7\u30EC\u30A4\u30E4\u30FC"
-    Hp: 10
+    Hp: 5
     Atk: 4
     Int: 1
     def: 1
