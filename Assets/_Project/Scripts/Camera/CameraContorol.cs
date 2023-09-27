@@ -46,5 +46,6 @@ public class CameraContorol : MonoBehaviour
         playerInput.currentActionMap = playerInput.actions.actionMaps[0];
         //
         expainText.SetActive(true);
+        playerInput.gameObject.tag = "Player";
     }
 }
